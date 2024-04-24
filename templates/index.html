@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+        <title>Upload An Image</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to Tomato Leaf Disease Detection</h1>
+            <form method="post" enctype="multipart/form-data", id="uploadForm">
+                {% csrf_token %}
+                <input type="file" id="imageInput" name="image">
+                <button type="button" id="captureButton", name="capture" onclick="window.location.href='{% url 'camera_capture' %}'">Capture from Camera</button> 
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </body>
+    {% endblock %}
+</html>

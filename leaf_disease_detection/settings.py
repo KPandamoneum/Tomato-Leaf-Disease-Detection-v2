@@ -22,16 +22,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-*j6b20qm*o10@5e^3gr83tms@+e-p72t9q@n&zons+g01!s#ca"
+# "django-insecure-*j6b20qm*o10@5e^3gr83tms@+e-p72t9q@n&zons+g01!s#ca"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -76,14 +76,15 @@ WSGI_APPLICATION = "leaf_disease_detection.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    "default": dj_database_url.parse(DATABASE_URL)
 }
 
-DATABASES["default"] = dj_database_url.parse("postgres://tomato_leaf_disease_detection_user:JvhxjFxuW2Ayt8PKRrkYRsBsPvZqGLOf@dpg-coklau6n7f5s738t93ag-a.oregon-postgres.render.com/tomato_leaf_disease_detection")
+# DATABASES = {
+#     "default": dj_database_url.parse("postgres://tomato_leaf_disease_detection_user:JvhxjFxuW2Ayt8PKRrkYRsBsPvZqGLOf@dpg-coklau6n7f5s738t93ag-a.oregon-postgres.render.com/tomato_leaf_disease_detection")
+# }
 
 
 # Password validation

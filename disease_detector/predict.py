@@ -17,7 +17,8 @@ class_dict = {
 }
 
 
-model = load_model("vgg19_l.keras")
+# model = load_model("vgg19_l.keras")
+model = load_model("vgg19.h5")
 
 def prepare_image(filepath):
     """Process the image ucing OpenCV and retun an array

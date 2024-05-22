@@ -31,7 +31,7 @@ descriptons = [
 ]
 
 
-model = load_model("model_best.h5")
+model = load_model("model_best_2.h5")
 
 def prepare_image(filepath):
     """Process the image ucing OpenCV and retun an array

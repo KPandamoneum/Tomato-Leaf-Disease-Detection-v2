@@ -11,9 +11,9 @@ def predict_disease(request):
     if request.method == 'POST' and request.FILES['image']:
         image = request.FILES['image']
         uploaded_image = Image.objects.create(image=image)
-        prediction_accuracy, predicted_class = prediction_main(uploaded_image.image.path)
+        prediction_accuracy, predicted_class, description = prediction_main(uploaded_image.image.path)
         image_path = uploaded_image.image.url
-        return render(request, 'result.html', {'predicted_class': predicted_class, 'prediction_accuracy': prediction_accuracy, 'image_path': image_path})
+        return render(request, 'result.html', {'predicted_class': predicted_class, 'prediction_accuracy': prediction_accuracy, 'image_path': image_path, 'description' : description})
     return render(request, 'index.html')
 
 
@@ -31,9 +31,9 @@ def camera_capture(request):
         obj.save()
         
         # Perform prediction on the submitted image
-        prediction_accuracy, predicted_class = prediction_main(obj.image.path)
+        prediction_accuracy, predicted_class, description = prediction_main(obj.image.path)
         
         # Redirect to the result page with prediction details
-        return render(request, 'result.html', {'predicted_class': predicted_class, 'prediction_accuracy': prediction_accuracy, 'image_path': obj.image.url})
+        return render(request, 'result.html', {'predicted_class': predicted_class, 'prediction_accuracy': prediction_accuracy, 'image_path': obj.image.url, 'description': description})
     return render(request, 'camera_capture.html')
 

@@ -13,6 +13,8 @@
             <h2>Predicted Class: {{ predicted_class }}</h2>
             <h2>Prediction Accuracy: {{ prediction_accuracy|floatformat:2 }}%</h2>
             <img src="{{ image_path }}" alt="Selected Image">
+            <h3>Description</h3>
+            <p>{{ description }}</p>
         </div>
     </body>
     {% endblock %}

@@ -31,15 +31,18 @@ descriptons = [
 ]
 
 
-model = load_model("model_best_2.h5")
+# model = load_model("model_best.h5")
+model = load_model("vgg19.h5")
 
 def prepare_image(filepath):
     """Process the image ucing OpenCV and retun an array
     """
     img_array = cv2.imread(filepath, cv2.IMREAD_COLOR)
     img_array = img_array / 255
-    new_array = cv2.resize(img_array, (224, 224))
-    return new_array.reshape(-1, 224, 224, 3)
+    # new_array = cv2.resize(img_array, (224, 224))
+    # return new_array.reshape(-1, 224, 224, 3)
+    new_array = cv2.resize(img_array, (128, 128))
+    return new_array.reshape(-1, 128, 128, 3)
 
 
 def prediction_cls(prediction):

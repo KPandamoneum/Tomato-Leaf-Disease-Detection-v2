@@ -1,3 +1,6 @@
 model.tflite
 vgg19_l.keras
 # vgg19.h5
+disease_detector/predict copy.py
+disease_detector/views copy.py
+templates/camera_capture copy.html

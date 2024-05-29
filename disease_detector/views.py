@@ -36,4 +36,3 @@ def camera_capture(request):
         # Redirect to the result page with prediction details
         return render(request, 'result.html', {'predicted_class': predicted_class, 'prediction_accuracy': prediction_accuracy, 'image_path': obj.image.url, 'description': description})
     return render(request, 'camera_capture.html')
-

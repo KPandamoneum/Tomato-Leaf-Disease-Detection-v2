@@ -4,3 +4,5 @@ vgg19_l.keras
 disease_detector/predict copy.py
 disease_detector/views copy.py
 templates/camera_capture copy.html
+result_old.css
+index_old.css

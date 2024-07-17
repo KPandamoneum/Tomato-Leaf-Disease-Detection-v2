@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(pexels-julia-nagy-568948-1327838.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    height: 380px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    top: 200px;
+    color: black;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: black;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 10px;
+}
+
+@media (max-width: 641px) {
+    html{
+        height: 100%;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        width: 100%;
+        height: 100%;
+        background-image: url(pexels-julia-nagy-568948-1327838.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 300px;
+        height: 280px;
+        margin: 0 auto;
+        padding: 20px;
+        font-size: 11px;
+        position: relative;
+        top: 200px;
+        color: black;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1, h2, h3 {
+        color: black;
+    }
+    
+    form {
+        margin-bottom: 20px;
+    }
+    
+    form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #0056b3;
+    }
+    
+    p {
+        margin-top: 10px;
+    }
+    
+
+}
